@@ -24,6 +24,9 @@ namespace måske_syg_liste.ViewModel
             }
         }
 
+        public Model.klasseinfo NewElev { get; set; }
+
+
 
         public KlasseViewmodel()
         {

@@ -25,5 +25,6 @@ namespace måske_syg_liste.Model
                 Email + " " + 
                 GitHubNavn;
                 }
+
     }
 }
