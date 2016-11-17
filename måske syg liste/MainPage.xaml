@@ -13,6 +13,7 @@
     </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="618" Margin="10,39,0,0" VerticalAlignment="Top" Width="1474" ItemsSource="{Binding PListe}" SelectedItem="{Binding selectedElev, Mode=TwoWay}"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="909" Margin="10,39,0,0" VerticalAlignment="Top" Width="877" ItemsSource="{Binding PListe}" SelectedItem="{Binding selectedElev, Mode=TwoWay}"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="892,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="107" Width="257" Text="{Binding selectedElev}"/>
     </Grid>
 </Page>

@@ -20,6 +20,14 @@ namespace måske_syg_liste.Model
                 GitHubNavn = "Super Gitte"
             }
             );
+            this.Add(new klasseinfo()
+            {
+                FirstName = "Fornavn1",
+                LastName = "Efternavn1",
+                Mobil = 12345679,
+                Email = "Mail@22.me",
+                GitHubNavn = "Super Gitte1"
+            });
         }
     }
 }
