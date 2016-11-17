@@ -101,6 +101,7 @@
     <Compile Include="Model\klasseinfo.cs" />
     <Compile Include="Model\KlasseListe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\KlasseViewmodel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

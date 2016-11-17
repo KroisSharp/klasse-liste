@@ -13,11 +13,11 @@ namespace måske_syg_liste.Model
         {
             this.Add(new klasseinfo()
             {
-                FirstName = "fornavn",
-                LastName = "efternavn",
+                FirstName = "Fornavn",
+                LastName = "Efternavn",
                 Mobil = 12345678,
-                Email = "mail@2.me",
-                GitHubNavn = "super Gitte"
+                Email = "Mail@2.me",
+                GitHubNavn = "Super Gitte"
             }
             );
         }
