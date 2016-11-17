@@ -15,5 +15,15 @@ namespace måske_syg_liste.Model
         public int Mobil { get; set; }
         public string Email { get; set; }
         public string GitHubNavn { get; set; }
+
+
+        public override string ToString()
+        {
+            return FirstName + " " + 
+                LastName + " " + 
+                Mobil + " " + 
+                Email + " " + 
+                GitHubNavn;
+                }
     }
 }
