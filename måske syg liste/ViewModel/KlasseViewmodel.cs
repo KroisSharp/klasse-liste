@@ -31,7 +31,7 @@ namespace måske_syg_liste.ViewModel
         public KlasseViewmodel()
         {
             PListe = new Model.KlasseListe();
-            AddElevCommand = new RelayCommand();
+            AddElevCommand = new RelayCommand(AddNewElev, null);
         }
 
 
