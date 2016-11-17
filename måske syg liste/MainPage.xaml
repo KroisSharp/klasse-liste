@@ -15,10 +15,10 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ListView x:Name="listView" Height="909" Margin="10,39,0,0" VerticalAlignment="Top" ItemsSource="{Binding PListe}" SelectedItem="{Binding selectedElev, Mode=TwoWay}" MinWidth="8" MinHeight="8" HorizontalAlignment="Left" Width="575"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="590,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="107" Width="257" Text="{Binding selectedElev}"/>
-        <TextBox x:Name="TBFirstName" Margin="0,46,1266,1002" TextWrapping="Wrap" Text="{Binding NewElev.FirstName, Mode=TwoWay}" PlaceholderText="Navn" HorizontalAlignment="Right" Width="64"/>
-        <TextBox x:Name="TBLastName" Margin="686,46,0,0" TextWrapping="Wrap" Text="{Binding NewElev.LastName, Mode=TwoWay}" VerticalAlignment="Top" PlaceholderText="efternavn" HorizontalAlignment="Left" Width="83"/>
-        <TextBox x:Name="TBEmail" Margin="998,46,0,0" TextWrapping="Wrap" Text="{Binding NewElev.Email, Mode=TwoWay}" VerticalAlignment="Top" PlaceholderText="Email" HorizontalAlignment="Left" Width="64"/>
-        <TextBox x:Name="TBPhone" Margin="794,46,0,0" TextWrapping="Wrap" Text="{Binding NewElev.Mobil, Mode=TwoWay}" VerticalAlignment="Top" PlaceholderText="Mobil" HorizontalAlignment="Left" Width="64"/>
-        <TextBox x:Name="TBGitHub" Margin="890,46,0,0" TextWrapping="Wrap" Text="{Binding NewElev.GitHubNavn, Mode=TwoWay}" VerticalAlignment="Top" PlaceholderText="GitHub" HorizontalAlignment="Left" Width="83"/>
+        <TextBox x:Name="TBLastName" Margin="827,46,0,0" TextWrapping="Wrap" Text="{Binding NewElev.LastName, Mode=TwoWay}" VerticalAlignment="Top" PlaceholderText="efternavn" HorizontalAlignment="Left" Width="83"/>
+        <TextBox x:Name="TBEmail" Margin="1139,46,0,0" TextWrapping="Wrap" Text="{Binding NewElev.Email, Mode=TwoWay}" VerticalAlignment="Top" PlaceholderText="Email" HorizontalAlignment="Left" Width="64"/>
+        <TextBox x:Name="TBPhone" Margin="935,46,0,0" TextWrapping="Wrap" Text="{Binding NewElev.Mobil, Mode=TwoWay}" VerticalAlignment="Top" PlaceholderText="Mobil" HorizontalAlignment="Left" Width="64"/>
+        <TextBox x:Name="TBGitHub" Margin="1031,46,0,0" TextWrapping="Wrap" Text="{Binding NewElev.GitHubNavn, Mode=TwoWay}" VerticalAlignment="Top" PlaceholderText="GitHub" HorizontalAlignment="Left" Width="83"/>
+        <TextBox x:Name="TBFirstName" HorizontalAlignment="Left" Margin="729,46,0,0" TextWrapping="Wrap" Text="{Binding NewElev.FirstName, Mode=TwoWay}" VerticalAlignment="Top" PlaceholderText="fornavn" Width="71"/>
     </Grid>
 </Page>
