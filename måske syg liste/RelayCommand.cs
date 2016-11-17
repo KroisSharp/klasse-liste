@@ -9,7 +9,7 @@ namespace måske_syg_liste
 {
     public class RelayCommand : ICommand
     {
-        public RelayCommand()
+        public RelayCommand(Action execute) : this(execute, null)
         {
 
         }
