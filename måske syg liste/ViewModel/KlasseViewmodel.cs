@@ -10,6 +10,17 @@ namespace måske_syg_liste.ViewModel
     {
         public Model.KlasseListe PListe { get; set; }
 
+
+
+        private Model.klasseinfo SelectedElev;
+
+        public Model.klasseinfo selectedElev
+        {
+            get { return SelectedElev; }
+            set { SelectedElev = value; }
+        }
+
+
         public KlasseViewmodel()
         {
             PListe = new Model.KlasseListe();
