@@ -8,10 +8,12 @@ namespace måske_syg_liste.ViewModel
 {
     class KlasseViewmodel
     {
+        public Model.KlasseListe PListe { get; set; }
+
         public KlasseViewmodel()
         {
-
+            PListe = new Model.KlasseListe();
         }
-        
+
     }
 }
