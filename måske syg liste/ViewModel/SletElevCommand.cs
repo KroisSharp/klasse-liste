@@ -7,22 +7,17 @@ using System.Windows.Input;
 
 namespace måske_syg_liste.ViewModel
 {
-    public class AddElevCommand : ICommand
+    class SletElevCommand : ICommand
     {
-        private readonly Action execute;
-
-
         public event EventHandler CanExecuteChanged;
 
-        //ctor
-        public AddElevCommand(Action execute)
+        private readonly Action executeSlet;
+
+        public SletElevCommand(Action executeSlet)
         {
-            this.execute = execute;
+            this.executeSlet = executeSlet;
         }
 
-
-        //bruges til at fortælle må jeg overhoved trykke på denne her knap
-        // kan man add ting fx er der skrevet noget i det felter der skal stå noget i
         public bool CanExecute(object parameter)
         {
             return true;
@@ -30,7 +25,7 @@ namespace måske_syg_liste.ViewModel
 
         public void Execute(object parameter)
         {
-            execute();
+            executeSlet();
         }
     }
 }

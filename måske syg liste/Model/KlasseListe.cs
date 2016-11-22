@@ -15,7 +15,7 @@ namespace måske_syg_liste.Model
             {
                 FirstName = "Fornavn",
                 LastName = "Efternavn",
-                Mobil = 12345678,
+                Mobil = "12345678",
                 Email = "Mail@2.me",
                 GitHubNavn = "Super Gitte"
             }
@@ -24,10 +24,11 @@ namespace måske_syg_liste.Model
             {
                 FirstName = "Fornavn1",
                 LastName = "Efternavn1",
-                Mobil = 12345679,
+                Mobil = "12345679",
                 Email = "Mail@22.me",
                 GitHubNavn = "Super Gitte1"
-            });
+            }
+            );
         }
     }
 }

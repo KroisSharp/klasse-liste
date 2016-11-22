@@ -27,12 +27,13 @@ namespace måske_syg_liste.ViewModel
         public Model.klasseinfo NewElev { get; set; }
 
 
-
         public KlasseViewmodel()
         {
             PListe = new Model.KlasseListe();
             //AddElevCommand = new RelayCommand(AddNewElev, null);
             AddKlasseCommand = new AddElevCommand(AddNewElev);
+            NewElev = new Model.klasseinfo();
+            SletKlasseCommand = new SletElevCommand(SletElev);
         }
 
 
@@ -48,9 +49,16 @@ namespace måske_syg_liste.ViewModel
 
         public AddElevCommand AddKlasseCommand { get; set; }
 
+        public SletElevCommand SletKlasseCommand { get; set; }
+
         public void AddNewElev()
         {
             PListe.Add(NewElev);
+        }
+
+        public void SletElev()
+        {
+            PListe.Remove(SelectedElev);
         }
 
         public RelayCommand AddElevCommand { get; set; }

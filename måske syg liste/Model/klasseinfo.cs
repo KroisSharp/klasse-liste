@@ -12,7 +12,7 @@ namespace måske_syg_liste.Model
         //props til brug af liste
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int Mobil { get; set; }
+        public string Mobil { get; set; }
         public string Email { get; set; }
         public string GitHubNavn { get; set; }
 
