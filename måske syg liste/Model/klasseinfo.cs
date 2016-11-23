@@ -16,7 +16,7 @@ namespace måske_syg_liste.Model
         public string Email { get; set; }
         public string GitHubNavn { get; set; }
 
-
+        // vi overrider den normale ToString meotde for at få vores egen:
         public override string ToString()
         {
             return FirstName + " " + 

@@ -9,12 +9,24 @@ namespace måske_syg_liste.ViewModel
 {
     class KlasseViewmodel : INotifyPropertyChanged
     {
+        //props
+        //vi skriver "model" foran for at fortælle at den skal kigge i vores "Model" mappe man kan bruge using
         public Model.KlasseListe PListe { get; set; }
 
+        public Model.klasseinfo NewElev { get; set; }
 
+        public AddElevCommand AddKlasseCommand { get; set; }
+
+        public SletElevCommand SletKlasseCommand { get; set; }
+
+        public RelayCommand AddElevCommand { get; set; }
+
+        #region Select elev prop & instance field
 
         private Model.klasseinfo SelectedElev;
-
+        //WriteLine(nameof(person.Address.ZipCode)); // prints "ZipCode”
+        // nameof kan altså gå ind på vores Plist fx og finde navn.
+        //bliver brugt her med SletElev metode
         public Model.klasseinfo selectedElev
         {
             get { return SelectedElev; }
@@ -23,20 +35,10 @@ namespace måske_syg_liste.ViewModel
                 OnPropertyChanged(nameof(selectedElev));
             }
         }
-
-        public Model.klasseinfo NewElev { get; set; }
-
-
-        public KlasseViewmodel()
-        {
-            PListe = new Model.KlasseListe();
-            //AddElevCommand = new RelayCommand(AddNewElev, null);
-            AddKlasseCommand = new AddElevCommand(AddNewElev);
-            NewElev = new Model.klasseinfo();
-            SletKlasseCommand = new SletElevCommand(SletElev);
-        }
+        #endregion
 
 
+        #region vores PropertyChangedEventHandler 
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)
@@ -46,22 +48,34 @@ namespace måske_syg_liste.ViewModel
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+        #endregion
 
-        public AddElevCommand AddKlasseCommand { get; set; }
 
-        public SletElevCommand SletKlasseCommand { get; set; }
-
+        //metode til at tilføje ny elev ind i vores liste væriderne får den fra de tekstbox som vi har lavet data binding til.
         public void AddNewElev()
         {
             PListe.Add(NewElev);
         }
 
+        //DENNE METODE VIRKER IKKE!!
+        //denne metode skulle vælge den valgte elev og slette den fra listen. dog sletter den bare den sidste på listen man kan altså ikke vælge
+        //med mindre man vælger en af dem man lavede i ctor -- fejl i propertychanged?
         public void SletElev()
         {
             PListe.Remove(SelectedElev);
         }
 
-        public RelayCommand AddElevCommand { get; set; }
+/// <summary>
+/// ctor laver alle nye instancer. så de kan bruges i vores viewmodel
+/// MERE info
+/// </summary>
+        public KlasseViewmodel()
+        {
+            PListe = new Model.KlasseListe();
+            AddKlasseCommand = new AddElevCommand(AddNewElev);
+            NewElev = new Model.klasseinfo();
+            SletKlasseCommand = new SletElevCommand(SletElev);
+        }
 
     }
 }

@@ -22,5 +22,7 @@
         <TextBox x:Name="TBGitHub" Margin="1129,46,0,0" TextWrapping="Wrap" Text="{Binding NewElev.GitHubNavn, Mode=TwoWay}" VerticalAlignment="Top" PlaceholderText="GitHub" HorizontalAlignment="Left" Width="83"/>
         <Button x:Name="button" Content="Tilføj" HorizontalAlignment="Left" Margin="935,164,0,0" VerticalAlignment="Top" Command="{Binding AddKlasseCommand}" />
         <Button x:Name="SletElev" Content="Slet" HorizontalAlignment="Left" Margin="935,237,0,0" VerticalAlignment="Top" Width="53" Command="{Binding SletKlasseCommand}"/>
+        <Button x:Name="button1" Content="videre" HorizontalAlignment="Left" Margin="687,798,0,0" VerticalAlignment="Top" ClickMode="Press" Style="{StaticResource NavigationBackButtonNormalStyle}" Height="112" Width="410"/>
+       
     </Grid>
 </Page>

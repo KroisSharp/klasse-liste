@@ -9,6 +9,8 @@ namespace måske_syg_liste.Model
 {
     public class KlasseListe : ObservableCollection<klasseinfo>
     {
+        //vi laver 2 nye instanser og tilføjer dem til vorers liste.
+        //bemærk her bruger vi vores props fra klasseinfo
         public KlasseListe() : base()
         {
             this.Add(new klasseinfo()
