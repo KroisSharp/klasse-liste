@@ -23,8 +23,8 @@
         <Button x:Name="button" Content="Tilføj" HorizontalAlignment="Left" Margin="935,164,0,0" VerticalAlignment="Top" Command="{Binding AddKlasseCommand}" />
         <Button x:Name="SletElev" Content="Slet" HorizontalAlignment="Left" Margin="935,237,0,0" VerticalAlignment="Top" Width="53" Command="{Binding SletKlasseCommand}"/>
         <Button x:Name="save" Content="save
-                " HorizontalAlignment="Left" Margin="941,290,0,0" VerticalAlignment="Top" ClickMode="Press" Command="{Binding SaveCommand}" Width="80" Height="44"/>
-        <Button x:Name="hent" Content="hent" HorizontalAlignment="Left" Margin="801,287,0,0" VerticalAlignment="Top" Command="{Binding HentDataCommand}" Width="119" Height="56"/>
+                " HorizontalAlignment="Left" Margin="939,290,0,0" VerticalAlignment="Top" ClickMode="Press" Command="{Binding SaveCommand}" Width="230" Height="402"/>
+        <Button x:Name="hent" Content="hent" HorizontalAlignment="Left" Margin="697,287,0,0" VerticalAlignment="Top" Command="{Binding HentDataCommand}" Width="223" Height="396"/>
 
     </Grid>
 </Page>
