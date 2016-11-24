@@ -66,12 +66,20 @@ namespace måske_syg_liste.ViewModel
         //metode til at tilføje ny elev ind i vores liste væriderne får den fra de tekstbox som vi har lavet data binding til.
         public void AddNewElev()
         {
-            PListe.Add(NewElev);
+
+            Model.klasseinfo TempKlasseinfo = new Model.klasseinfo();
+            TempKlasseinfo.FirstName = NewElev.FirstName;
+            TempKlasseinfo.LastName = NewElev.LastName;
+            TempKlasseinfo.Email = NewElev.Email;
+            TempKlasseinfo.GitHubNavn = NewElev.GitHubNavn;
+            TempKlasseinfo.Mobil = NewElev.Mobil;
+
+            PListe.Add(TempKlasseinfo);
         }
 
         
         //denne metode skulle vælge den valgte elev og slette den fra listen. dog sletter den bare den sidste på listen man kan altså ikke vælge
-        //med mindre man vælger en af dem man lavede i ctor -- fejl i propertychanged?
+        // dette bliver fixed ved at tilføje en tempklasseinfo når man tilføjer en elev i AddNewElev() Metode
         public void SletElev()
         {
             PListe.Remove(SelectedElev);
