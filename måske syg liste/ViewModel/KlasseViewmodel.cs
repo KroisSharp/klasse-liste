@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace måske_syg_liste.ViewModel
 {
@@ -20,6 +22,7 @@ namespace måske_syg_liste.ViewModel
         public SletElevCommand SletKlasseCommand { get; set; }
 
         public RelayCommand AddElevCommand { get; set; }
+
 
         #region Select elev prop & instance field
 
@@ -75,6 +78,11 @@ namespace måske_syg_liste.ViewModel
             AddKlasseCommand = new AddElevCommand(AddNewElev);
             NewElev = new Model.klasseinfo();
             SletKlasseCommand = new SletElevCommand(SletElev);
+        }
+        public string GetJson()
+        {
+            string jsonText = JsonConvert.SerializeObject(PListe);
+            return jsonText;
         }
 
     }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace måske_syg_liste.Model
 {
@@ -31,6 +33,11 @@ namespace måske_syg_liste.Model
                 GitHubNavn = "Super Gitte1"
             }
             );
+        }
+        public string GetJson()
+        {
+            string json = JsonConvert.SerializeObject(this);
+            return json;
         }
     }
 }
