@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.IO;
+using Windows.Storage;
 
 namespace måske_syg_liste.ViewModel
 {
@@ -22,6 +23,14 @@ namespace måske_syg_liste.ViewModel
         public SletElevCommand SletKlasseCommand { get; set; }
 
         public RelayCommand AddElevCommand { get; set; }
+
+        public RelayCommand SaveCommand { get; set; }
+
+        StorageFolder localfolder = null;
+
+        private readonly string filNavn = "JsonText.json";
+
+        public RelayCommand HentDataCommand { get; set; }
 
 
         #region Select elev prop & instance field
@@ -60,7 +69,7 @@ namespace måske_syg_liste.ViewModel
             PListe.Add(NewElev);
         }
 
-        //DENNE METODE VIRKER IKKE!!
+        
         //denne metode skulle vælge den valgte elev og slette den fra listen. dog sletter den bare den sidste på listen man kan altså ikke vælge
         //med mindre man vælger en af dem man lavede i ctor -- fejl i propertychanged?
         public void SletElev()
@@ -78,11 +87,26 @@ namespace måske_syg_liste.ViewModel
             AddKlasseCommand = new AddElevCommand(AddNewElev);
             NewElev = new Model.klasseinfo();
             SletKlasseCommand = new SletElevCommand(SletElev);
+            localfolder = ApplicationData.Current.LocalFolder;
+            SaveCommand = new RelayCommand(GemDataTilDiskAsync);
+            HentDataCommand = new RelayCommand(HentDataFraDisk);
         }
-        public string GetJson()
+        //her gemmer vi til disk via async så vi kan lave videre imens 
+        public async void GemDataTilDiskAsync()
         {
-            string jsonText = JsonConvert.SerializeObject(PListe);
-            return jsonText;
+            string jsonText = this.PListe.GetJson();
+            StorageFile file = await localfolder.CreateFileAsync(filNavn, CreationCollisionOption.ReplaceExisting);
+            await FileIO.WriteTextAsync(file, jsonText);
+        }
+        public async void HentDataFraDisk()
+        {
+            //vi vil gerne clear liste så vi ikke henter igen
+            this.PListe.Clear();
+
+            StorageFile file = await localfolder.GetFileAsync(filNavn);
+            string jsonText = await FileIO.ReadTextAsync(file);
+            PListe.hentjson(jsonText);
+
         }
 
     }

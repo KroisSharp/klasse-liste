@@ -39,5 +39,14 @@ namespace måske_syg_liste.Model
             string json = JsonConvert.SerializeObject(this);
             return json;
         }
+        public void hentjson(string jsonText)
+        {
+            List<klasseinfo> nyListe = JsonConvert.DeserializeObject<List<klasseinfo>>(jsonText);
+
+            foreach (var i in nyListe)
+            {
+                this.Add(i);
+            }
+        }
     }
 }
