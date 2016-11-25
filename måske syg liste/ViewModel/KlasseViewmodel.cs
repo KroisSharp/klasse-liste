@@ -32,6 +32,8 @@ namespace måske_syg_liste.ViewModel
 
         public RelayCommand HentDataCommand { get; set; }
 
+        public RelayCommand ClearAllCommand { get; set; }
+
 
         #region Select elev prop & instance field
 
@@ -85,6 +87,11 @@ namespace måske_syg_liste.ViewModel
             PListe.Remove(SelectedElev);
         }
 
+        public void ClearAll()
+        {
+            PListe.Clear();
+        }
+
 /// <summary>
 /// ctor laver alle nye instancer. så de kan bruges i vores viewmodel
 /// MERE info
@@ -98,6 +105,7 @@ namespace måske_syg_liste.ViewModel
             localfolder = ApplicationData.Current.LocalFolder;
             SaveCommand = new RelayCommand(GemDataTilDiskAsync);
             HentDataCommand = new RelayCommand(HentDataFraDisk);
+            ClearAllCommand = new RelayCommand(ClearAll);
         }
         //her gemmer vi til disk via async så vi kan lave videre imens 
         public async void GemDataTilDiskAsync()
